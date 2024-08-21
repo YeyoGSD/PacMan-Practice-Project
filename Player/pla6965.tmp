@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://dabhbx2hprdga"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_ajkj4"]
+[ext_resource type="Texture2D" uid="uid://clhqsfshq6stj" path="res://Player/PacMan.png" id="2_2vswy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulp4y"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpnm0"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dhwa"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ror6r"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5j81"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwdqg"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lt07"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwcwy"]
+atlas = ExtResource("2_2vswy")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h12vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulp4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpnm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dhwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ror6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5j81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwdqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lt07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwcwy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbpfq"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ajkj4")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h12vo")
+frame_progress = 0.456677
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xbpfq")
