@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk2bvulcu3p7y"]
+[gd_scene load_steps=3 format=3 uid="uid://dk2bvulcu3p7y"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hsueh"]
+[ext_resource type="Script" path="res://Ghost/ghost.gd" id="1_h5lxg"]
 
-[node name="Ghost" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nit04"]
+radius = 6.0
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="Ghost" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_h5lxg")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hsueh")
+scale = Vector2(0.8, 0.8)
+autoplay = "default"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nit04")
