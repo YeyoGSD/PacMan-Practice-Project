@@ -50,6 +50,7 @@ radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_ajkj4")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
@@ -69,5 +70,19 @@ libraries = {
 
 [node name="CollisionShape" type="CollisionShape2D" parent="CollectionArea"]
 shape = SubResource("CircleShape2D_3d7p6")
+
+[node name="WallsDetectors" type="Node2D" parent="."]
+
+[node name="DownRayCast" type="RayCast2D" parent="WallsDetectors"]
+target_position = Vector2(0, 12)
+
+[node name="UpRayCast" type="RayCast2D" parent="WallsDetectors"]
+target_position = Vector2(0, -12)
+
+[node name="RightRayCast" type="RayCast2D" parent="WallsDetectors"]
+target_position = Vector2(12, 0)
+
+[node name="LeftRayCast" type="RayCast2D" parent="WallsDetectors"]
+target_position = Vector2(-12, 0)
 
 [connection signal="area_entered" from="CollectionArea" to="." method="_on_collection_area_area_entered"]
