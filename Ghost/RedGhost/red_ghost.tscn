@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://b2dmlvs1p06vm"]
+
+[ext_resource type="PackedScene" uid="uid://dk2bvulcu3p7y" path="res://Ghost/ghost.tscn" id="1_kbr00"]
+[ext_resource type="Texture2D" uid="uid://bklwrmm38n3vn" path="res://Ghost/RedGhost/redGhost.png" id="2_hxdyt"]
+[ext_resource type="Script" path="res://Ghost/RedGhost/red_ghost.gd" id="2_wsge8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_874w6"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hte0r"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24e4"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmge0"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6cj5"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tqhk"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56ofg"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viljr"]
+atlas = ExtResource("2_hxdyt")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duwt0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_874w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hte0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w24e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmge0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6cj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tqhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56ofg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viljr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="RedGhost" instance=ExtResource("1_kbr00")]
+script = ExtResource("2_wsge8")
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_duwt0")
